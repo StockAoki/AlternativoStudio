@@ -377,7 +377,8 @@ section { position: relative; }
   background: var(--sage);
   flex-shrink: 0;
 }
-.svc .price {
+.svc .price,
+.svc-wp .price {
   margin-top: 26px;
   font-size: 1.15rem;
   font-weight: 700;
@@ -386,7 +387,8 @@ section { position: relative; }
   align-items: baseline;
   gap: 7px;
 }
-.svc .price .from { font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.svc .price .from,
+.svc-wp .price .from { font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 .svc .tag {
   position: absolute; top: clamp(28px,2.6vw,40px); right: clamp(28px,2.6vw,40px);
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
@@ -449,6 +451,27 @@ section { position: relative; }
   color: var(--muted);
 }
 .project--coming .p-name { color: var(--muted); }
+
+/* Servicios — card WordPress (ancho completo) */
+.svc-wp {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: clamp(28px, 3vw, 44px) clamp(28px, 3vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 56px);
+  transition: background .5s var(--ease);
+}
+.svc-wp:hover { background: var(--tint); }
+.svc-wp-text { flex: 1; min-width: 0; }
+.svc-wp-text .name { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.svc-wp-text .desc { margin-top: 14px; font-size: 0.95rem; color: var(--muted); line-height: 1.5; max-width: 56ch; }
+.svc-wp-text .svc-features { flex-direction: row; flex-wrap: wrap; max-width: 56ch; }
+.svc-wp-action { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.svc-wp-action .price { margin-top: 0; }
+.svc-wp-action .svc-cta { margin-top: 14px; }
 
 /* Servicios — nota mantenimiento */
 .svc-note {
@@ -577,6 +600,8 @@ footer {
   .svc-grid { grid-template-columns: 1fr; }
   .svc { border-right: none !important; border-bottom: 1px solid var(--line); min-height: auto; }
   .svc:last-child { border-bottom: none; }
+  .svc-wp { flex-direction: column; align-items: flex-start; }
+  .svc-wp-action { align-items: flex-start; text-align: left; width: 100%; }
   .port-grid { grid-template-columns: 1fr; }
   .project .meta { flex-direction: column; align-items: flex-start; gap: 14px; }
   .pd-grid {
